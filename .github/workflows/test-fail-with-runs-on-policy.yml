@@ -27,22 +27,3 @@ jobs:
         run: |
           echo "Workflow completed successfully"
           echo "This is a fail scenario for runs-on policy enforcement"
-
-  test-fail-self-hosted:
-    runs-on: self-hosted
-    permissions:
-      contents: read
-
-    steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@v2
-        with:
-          egress-policy: audit
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Test on self-hosted runner
-        run: |
-          echo "Running on self-hosted (should be blocked)"
-          echo "This workflow uses self-hosted runner labels"
