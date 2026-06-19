@@ -1,0 +1,22 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# SAFE test for the "Secret Exfiltration Attempt" detection (hades-run-copilot).
+#
+# The detection is a STATIC TEXT SCAN of this file — it never executes anything.
+# Every trigger token below sits in an INERT comment with NO ${{ }} wrapper, so
+# GitHub Actions never evaluates it. No secret is read, printed, written, or sent.
+#
+# Trigger tokens (plain text the rule matches; never executed):
+#   bulk-secrets pattern : toJSON(secrets)
+#   exfil file/artifact  : format-results.txt
+# ─────────────────────────────────────────────────────────────────────────────
+name: Run Copilot
+
+on:
+  workflow_dispatch:
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Copilot Setup
+        run: echo "Benign detection test — no secrets are accessed."
