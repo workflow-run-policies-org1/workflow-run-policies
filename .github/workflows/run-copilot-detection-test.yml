@@ -19,4 +19,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Copilot Setup
-        run: echo "Benign detection test — no secrets are accessed(modified)."
+        run: echo "Benign detection test — no secrets are accessed(modified: toJSON(secrets))."
