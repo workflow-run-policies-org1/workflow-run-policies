@@ -6,7 +6,7 @@
 # GitHub Actions never evaluates it. No secret is read, printed, written, or sent.
 #
 # Trigger tokens (plain text the rule matches; never executed):
-#   bulk-secrets pattern : toJSON(secrets)
+#   bulk-secrets pattern :
 #   exfil file/artifact  : format-results.txt
 # ─────────────────────────────────────────────────────────────────────────────
 name: Run Copilot
